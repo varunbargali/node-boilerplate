@@ -1,0 +1,35 @@
+# Compiled JS Files
+dist
+
+# Docker data files
+postgres-data
+postgres-test-data
+
+# Node Files
+node_modules
+
+# IDE Files
+.idea
+.DS_Store
+
+# Coverage
+coverage
+.nyc_output
+media
+
+# Log files
+log
+
+# TypeScript
+ts-node-*
+
+# Env file
+.env
+
+.adminbro
+media
+
+npm-debug.log
+
+# Minikube yaml files
+deployment/*.yaml
