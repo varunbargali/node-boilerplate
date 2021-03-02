@@ -3,7 +3,7 @@ import User, { UserInterface } from './model';
 import { HTTP400Error, HTTP404Error } from '../../../../utils/http_errors';
 
 export default class UserService {
-  public static async createUser(userParams) {
+  public static async createUser(userParams): Promise<UserInterface> {
     const user = new User(userParams);
     const validateError = user.validateSync();
     if (validateError) {
@@ -18,7 +18,7 @@ export default class UserService {
     return await user.save();
   }
 
-  public static async findUserById(id: string) {
+  public static async findUserById(id: string): Promise<UserInterface> {
     const user: UserInterface = await User.findById(id);
     if (user == null) {
       throw new HTTP404Error();
@@ -26,7 +26,7 @@ export default class UserService {
     return user;
   }
 
-  public static async filterUser(query: any) {
+  public static async filterUser(query: any): Promise<UserInterface[]> {
     return await User.findOne(query);
   }
 
